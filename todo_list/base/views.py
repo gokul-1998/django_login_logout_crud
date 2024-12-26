@@ -4,4 +4,4 @@ from django.shortcuts import render
 # Create your views here.
 
 def tasklist(request):
-    return HttpResponse("Hello, world. You're at the tasklist.")
+    return HttpResponse("To do list")
