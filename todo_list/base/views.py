@@ -8,6 +8,8 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import DeleteView
 
 from django.contrib.auth.views import LoginView
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
@@ -43,3 +45,7 @@ class DeleteView(DeleteView):
     model=Task
     context_object_name = 'task'
     success_url=reverse_lazy('tasks')
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
